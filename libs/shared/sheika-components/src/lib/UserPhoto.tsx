@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 export interface UserPhotoProps {
-  src?: string
-  className?: string
-  name: string
-  gender: 'male' | 'female'  
+  src?: string;
+  className?: string;
+  name: string;
+  gender: 'male' | 'female';
 }
 const colorElementShadow = 'rgba(0,0,0,.2)';
 const animationSlow = '600ms';
@@ -19,11 +19,10 @@ const StyleImg = styled.img`
   border-radius: 100%;
   width: 100%;
   height: 100%;
-`
-
+`;
 
 interface StyleFigureProps {
-  gender: 'male' | 'female'
+  gender: 'male' | 'female';
 }
 
 const StyleFigure = styled.figure<StyleFigureProps>`
@@ -34,7 +33,8 @@ const StyleFigure = styled.figure<StyleFigureProps>`
   align-items: center;
   text-shadow: 0 0 5px ${colorElementShadow};
   transition: ${animationSlow};
-  background-color: ${props => props.gender === 'male' ? colorMale : colorFemale};
+  background-color: ${props =>
+    props.gender === 'male' ? colorMale : colorFemale};
   border-radius: 100%;
   width: 100%;
   height: 100%;
@@ -43,10 +43,15 @@ const StyleFigure = styled.figure<StyleFigureProps>`
   padding: 16px;
 `;
 
-export const UserPhoto = ({ src, name, gender = 'male', className, ...other }: UserPhotoProps) => {
-  
+export const UserPhoto = ({
+  src,
+  name,
+  gender = 'male',
+  className,
+  ...other
+}: UserPhotoProps) => {
   const classes = `UserPhoto ${className}`;
-  
+
   if (src) {
     return <StyleImg className={classes} src={src} alt={name} {...other} />;
   }
@@ -54,7 +59,11 @@ export const UserPhoto = ({ src, name, gender = 'male', className, ...other }: U
   const [firstNameinitial = ''] = firstName.split('');
   const [sourNameinitial = ''] = sourName.split('');
   const initials = `${firstNameinitial}${sourNameinitial}`.toUpperCase();
-  return <StyleFigure gender={gender}><figcaption>{initials}</figcaption></StyleFigure>;
+  return (
+    <StyleFigure gender={gender}>
+      <figcaption>{initials}</figcaption>
+    </StyleFigure>
+  );
 };
 
 export default UserPhoto;

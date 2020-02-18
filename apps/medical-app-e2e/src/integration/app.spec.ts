@@ -1,4 +1,4 @@
-import { getGreeting } from '../support/app.po';
+import { getGreeting, getResources } from '../support/app.po';
 
 describe('medical-app', () => {
   beforeEach(() => cy.visit('/'));
@@ -9,5 +9,9 @@ describe('medical-app', () => {
 
     // Function helper example, see `../support/app.po.ts` file
     getGreeting().contains('Welcome to medical-app!');
+  });
+
+  it('should get h2 message', () => {
+    getResources().contains('Resources & Tools');
   });
 });

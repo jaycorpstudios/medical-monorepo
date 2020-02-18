@@ -5,7 +5,9 @@ import UserPhoto from './UserPhoto';
 
 describe(' UserPhoto', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<UserPhoto name='Jay Benitez' gender="male" />);
+    const { baseElement } = render(
+      <UserPhoto name="Jay Benitez" gender="male" />
+    );
     expect(baseElement).toBeTruthy();
   });
 });

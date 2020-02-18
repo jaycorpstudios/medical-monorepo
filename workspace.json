@@ -52,10 +52,7 @@
               "apps/medical-app/tsconfig.json",
               "apps/medical-app/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/medical-app/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/medical-app/**"]
           }
         },
         "test": {
@@ -91,13 +88,8 @@
           "options": {
             "linter": "eslint",
             "config": "apps/medical-app-e2e/.eslintrc",
-            "tsConfig": [
-              "apps/medical-app-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/medical-app-e2e/**"
-            ]
+            "tsConfig": ["apps/medical-app-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/medical-app-e2e/**"]
           }
         }
       }
@@ -117,10 +109,7 @@
               "libs/medical-app/cache/tsconfig.lib.json",
               "libs/medical-app/cache/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/medical-app/cache/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/medical-app/cache/**"]
           }
         },
         "test": {
@@ -213,9 +202,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/shared-sheika-components-e2e/tsconfig.e2e.json"
-            ],
+            "tsConfig": ["apps/shared-sheika-components-e2e/tsconfig.e2e.json"],
             "exclude": [
               "**/node_modules/**",
               "!apps/shared-sheika-components-e2e/**"
