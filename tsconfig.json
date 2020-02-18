@@ -15,7 +15,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@jaycorpstudios/medical-app/cache": [
+        "libs/medical-app/cache/src/index.ts"
+      ],
+      "@jaycorpstudios/shared/sheika-components": [
+        "libs/shared/sheika-components/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

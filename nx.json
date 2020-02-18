@@ -17,6 +17,12 @@
     "medical-app-e2e": {
       "tags": [],
       "implicitDependencies": ["medical-app"]
+    },
+    "medical-app-cache": {
+      "tags": []
+    },
+    "shared-sheika-components": {
+      "tags": []
     }
   }
 }
