@@ -1,0 +1,22 @@
+{
+  "npmScope": "jaycorpstudios",
+  "implicitDependencies": {
+    "workspace.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "medical-app": {
+      "tags": []
+    },
+    "medical-app-e2e": {
+      "tags": [],
+      "implicitDependencies": ["medical-app"]
+    }
+  }
+}
