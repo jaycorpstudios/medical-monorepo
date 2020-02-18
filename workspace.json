@@ -52,7 +52,10 @@
               "apps/medical-app/tsconfig.json",
               "apps/medical-app/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/medical-app/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/medical-app/**"
+            ]
           }
         },
         "test": {
@@ -88,8 +91,13 @@
           "options": {
             "linter": "eslint",
             "config": "apps/medical-app-e2e/.eslintrc",
-            "tsConfig": ["apps/medical-app-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/medical-app-e2e/**"]
+            "tsConfig": [
+              "apps/medical-app-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/medical-app-e2e/**"
+            ]
           }
         }
       }
@@ -109,7 +117,10 @@
               "libs/medical-app/cache/tsconfig.lib.json",
               "libs/medical-app/cache/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/medical-app/cache/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/medical-app/cache/**"
+            ]
           }
         },
         "test": {
@@ -147,6 +158,68 @@
             "jestConfig": "libs/shared/sheika-components/jest.config.js",
             "tsConfig": "libs/shared/sheika-components/tsconfig.spec.json",
             "passWithNoTests": true
+          }
+        },
+        "storybook": {
+          "builder": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/react",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/shared/sheika-components/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "builder": "@nrwl/storybook:build",
+          "options": {
+            "uiFramework": "@storybook/react",
+            "outputPath": "dist/storybook/shared-sheika-components",
+            "config": {
+              "configFolder": "libs/shared/sheika-components/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        }
+      }
+    },
+    "shared-sheika-components-e2e": {
+      "root": "apps/shared-sheika-components-e2e",
+      "sourceRoot": "apps/shared-sheika-components-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/shared-sheika-components-e2e/cypress.json",
+            "tsConfig": "apps/shared-sheika-components-e2e/tsconfig.e2e.json",
+            "devServerTarget": "shared-sheika-components:storybook"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "shared-sheika-components:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/shared-sheika-components-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/shared-sheika-components-e2e/**"
+            ]
           }
         }
       }

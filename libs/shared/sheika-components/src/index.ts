@@ -1,1 +1,1 @@
-export * from './lib/shared-sheika-components';
+export * from './lib/UserPhoto';
